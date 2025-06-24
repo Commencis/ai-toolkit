@@ -1,0 +1,35 @@
+{
+  "name": "@commencis/ai-toolkit",
+  "version": "0.0.1",
+  "description": "Commencis AI Toolkit",
+  "author": "Commencis WEB Team",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.16"
+  },
+  "packageManager": "pnpm@10.12.3",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lint:check:js": "eslint .",
+    "lint:fix:js": "eslint . --fix",
+    "lint:check:format": "prettier \"**/*.{json,md}\" --check",
+    "lint:fix:format": "prettier \"**/*.{json,md}\" --write",
+    "lint": "pnpm run \"/^lint:check:.*/\"",
+    "lint:fix": "pnpm run \"/^lint:fix:.*/\"",
+    "ci:review": "pnpm run lint",
+    "prepare": "husky",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "@commencis/commitlint-config": "1.1.4",
+    "@commencis/eslint-config": "1.7.2",
+    "@commencis/lint-staged-config": "1.0.0",
+    "@commencis/prettier-config": "2.0.0",
+    "commitlint": "19.8.1",
+    "eslint": "9.29.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.2",
+    "prettier": "3.6.0",
+    "typescript": "5.8.3"
+  }
+}
